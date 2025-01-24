@@ -15,7 +15,7 @@ const Appointment = () => {
   const daysOfWeek = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
 
   const fetchDocInfo = () => {
-    const docInfo = doctors.find(doc => doc._id = docId);
+    const docInfo = doctors.find(doc => doc._id === docId);
     setDocInfo(docInfo);
     // console.log(docInfo);
   }
@@ -34,7 +34,7 @@ const Appointment = () => {
       
       // setting end time of the date with index
       let endTime = new Date();
-      endTime.setDate(today.getDate() + 1);
+      endTime.setDate(today.getDate() + index);
       endTime.setHours(21,0,0,0);
 
       // setting hours
